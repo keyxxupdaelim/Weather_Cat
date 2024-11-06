@@ -50,13 +50,13 @@ const weatherOptions = { // 날씨 옵션들
 export default function Weather({temp, condition}) { // 날씨 불러오기
     return (
     <LinearGradient // 그래디언트
-        colors={weatherOptions["Drizzle"].gradient} // condition에 따른 배경 그래이언트 변경
+        colors={weatherOptions[condition].gradient} // condition에 따른 배경 그래이언트 변경
         style={styles.container}>
             <StatusBar barStyle="light-content" />
             <View style={styles.halfContainer}>
                 <MaterialCommunityIcons  // 아이콘
                 size={96} 
-                name={weatherOptions["Drizzle"].iconName} // condition에 따라 색상 바뀜 
+                name={weatherOptions[condition].iconName} // condition에 따라 색상 바뀜 
                 color="white"
                 />
                 <Text style={styles.temp}>{temp}º</Text>
