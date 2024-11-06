@@ -19,6 +19,11 @@ export default class extends React.Component {
   }
   getLocation = async() => {
     try {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
       // throw Error();
       await Location.getCurrentPositionAsync();
       const {coords: {latitude, longitude} } = await Location.getCurrentPositionAsync();
