@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, StatusBar } from "react-native";
 import PropTypes from "prop-types";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { LinearGradient } from 'expo-linear-gradient';
+import {Image} from 'react-native';
 
 const weatherOptions = { // 날씨 옵션들
         ThunderStorm: {
@@ -30,13 +31,13 @@ const weatherOptions = { // 날씨 옵션들
             subtitle: "Let's have a snowball fight!❄"
         },
         Atmosphere: {
-            iconName:"weather-hail",
+            iconName:"weather-sunny",
             gradient: ["#89F7FE", "#66A6FF"],
             title: "Atmosphere",
             subtitle: "The sky is blue."
         },
         Clear: {
-            iconName:"weather-sunny",
+            iconName:"weather-sunny-alert",
             gradient: ["#FF7300", "#FEF253"],
             title: "Sunny",
             subtitle: "Let's go outside."
@@ -73,6 +74,9 @@ export default function Weather({temp, condition}) { // 날씨 불러오기
         colors={weatherOptions[condition].gradient} // condition에 따른 배경 그래이언트 변경
         style={styles.container}>
             <StatusBar barStyle="light-content" />
+            <View style={styles.imgContainer}>
+                <Image source={require('./assets/sunny_cat.png')} />
+            </View>
             <View style={styles.halfContainer}>
                 <MaterialCommunityIcons  // 아이콘
                 size={96} 
@@ -133,7 +137,12 @@ const styles = StyleSheet.create({
         fontSize: 24
     },
     textContainer: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         alignItems: "flex-start"
+    },
+    imgContainer: {
+        flex: 2,
+        justifyContent: "Center",
+        alignItems: "center"
     }
 })
