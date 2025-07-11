@@ -33,6 +33,15 @@
 
 ---
 
+## 결과 화면  
+
+아래는 날씨 상태에 따라 변하는 고양이 캐릭터 예시입니다.
+
+![결과 이미지]<img width="2281" height="819" alt="image" src="https://github.com/user-attachments/assets/d61b2292-7077-43e4-af08-1c7f8dd40b89" />
+
+
+---
+
 ##  실행 방법
 
 1. **클론**
